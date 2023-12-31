@@ -26,6 +26,9 @@ app.use(morgan("dev"));
 app.use("/api/v1/user", userRoute);
 app.use("/api/v1/blog", blogRouter);
 
+//port
+const port = process.env.PORT || 8000;
+
 //static files
 app.use(express.static(path.join(__dirname, "./client1/build")));
 
@@ -33,8 +36,7 @@ app.get("*", function (req, res) {
   res.sendFile(path.join(__dirname, "./client1/build/index.html"));
 });
 
-//port
-const port = process.env.PORT || 8000;
+
 
 //listen
 app.listen(port, () => {
