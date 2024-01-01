@@ -30,10 +30,10 @@ app.use("/api/v1/blog", blogRouter);
 const port = process.env.PORT || 8000;
 
 //static files
-app.use(express.static(path.join(__dirname, "./client1/build")));
+app.use(express.static(path.join(__dirname, "/./client1/build")));
 
 app.get("*", function (req, res) {
-  res.sendFile(path.join(__dirname, "./client1/build/index.html"));
+  res.sendFile(path.join(__dirname, "/./client1/build/index.html"));
 });
 
 
